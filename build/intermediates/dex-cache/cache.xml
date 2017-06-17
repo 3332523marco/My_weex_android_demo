@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5e497d60f0cb6ce87c458ac5420a46d0fed49bd0">
+        <dex dex="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-25.0.0_40f5eb99473acf2ea5861a2acde72698927a6dc8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/test/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/3.7.0/9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4/glide-3.7.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/pre-dexed/debug/glide-3.7.0_99a902453cb2a82064857539b105dfd27adb7582.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ee5faf4dee5b6a4364bf51587871047dde7c703a">
+        <dex dex="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_1eaf2815d99aa852077426680c0568848704cb07.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3b61a70884adaf0be3fc06c70c801e3e6df13133">
+        <dex dex="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_898ea348c6e9e254d60d86096cf964a3e1044868.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/exploded-aar/com.android.support/transition/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0c6d948e6cb9ea6f535d175fb61ba2930719c0e9">
+        <dex dex="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/pre-dexed/debug/com.android.support-transition-25.0.0_02344ed505916aa158f2ddd270af3d8306f9060d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/exploded-aar/com.android.support/design/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="26384be22ddc74cfe197ebda9edbc7d1fd8bd537">
+        <dex dex="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/pre-dexed/debug/com.android.support-design-25.0.0_c05c9fd2f9b9a35c604c868ebad5ea349f4206cb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/test/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.3.0/1b355f73402020c5a0dcca58affc3ec3dfeabac1/okio-1.3.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1b355f73402020c5a0dcca58affc3ec3dfeabac1">
+        <dex dex="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/pre-dexed/debug/okio-1.3.0_885e03d1019c83e74f1bc7d207158eb74361c1db.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="665d21a8a069c96b4d9e8b434f5096d865b4e261">
+        <dex dex="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_80bc513770f684127179fcfbc6f6c67ff7c2bbaf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="26674000177e45447a0326a6ad84612761199a13">
+        <dex dex="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-25.0.0_32f69fe0fde24952cfe429dc5406fb0e3585de42.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4ccbcda5c72027c7f7c14be9ff8640d9cb0d8da0">
+        <dex dex="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-25.0.0_5e0771049bbcd90f220dbefdfffcd792112ed9a2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/exploded-aar/com.taobao.android/weex_sdk/0.10.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5c661d2cd2b4e0f3236d37b1e2b84b2b3a0a19f5">
+        <dex dex="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/pre-dexed/debug/com.taobao.android-weex_sdk-0.10.0_3e38e36212b85306c222977efca24f454aaae842.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
+        <dex dex="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-25.0.0_d078e54422d370f8f877ae7b5b53649d310acbb9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/exploded-aar/com.taobao.android/weex_inspector/0.8.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="afe4be05c877dcbf2f03e794998c6c97de8264c7">
+        <dex dex="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/pre-dexed/debug/com.taobao.android-weex_inspector-0.8.0.0_0909cbf9ec61cb03b1f732f885e29ccca0162e02.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-25.0.0_6dc3c33c297ca7defc9c8c46827c4f49c89b6d32.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="76fb65a4b41ea42dab8a1310ed772a2420c96b52">
+        <dex dex="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-25.0.0_01ff15c744ab0a71c0347632a117c31a6f285ac6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/test/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp/okhttp/2.3.0/2e7bc7033dc2c8423e661224171b3133fb155b28/okhttp-2.3.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="2e7bc7033dc2c8423e661224171b3133fb155b28">
+        <dex dex="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/pre-dexed/debug/okhttp-2.3.0_93d4f9295c1c331f2aef28c1a5cac05c7d3e1e4a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/test/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp/okhttp-ws/2.3.0/7896d229b6aa7884552ab9c23de54c7eb0de8203/okhttp-ws-2.3.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7896d229b6aa7884552ab9c23de54c7eb0de8203">
+        <dex dex="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/pre-dexed/debug/okhttp-ws-2.3.0_9008c4e612216a760c3a75a7f8762e160f338668.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
+        <dex dex="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-25.0.0_b33993f25e037075370c20a0708996f1e1de3eaa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8bc45ce1f63d1a391fd38b32a201be5a42f9c95d">
+        <dex dex="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-25.0.0_e28ec25e977f9d5fe67d25a7e95d2f40b795f0af.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_219bc0c52b27e11b0e4e1493ac9f58b134db0a1d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
+        <dex dex="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_95df345c47c3540f498fb2c8a8a4d8182cd3d4e6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/test/.gradle/caches/modules-2/files-2.1/com.alibaba/fastjson/1.1.45/9346228ffdcd675f909726670afebe186b270314/fastjson-1.1.45.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9346228ffdcd675f909726670afebe186b270314">
+        <dex dex="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/pre-dexed/debug/fastjson-1.1.45_c363c2a61c0df608ac25e35fd358fb83ce6e3db7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
+        <dex dex="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-25.0.0_cfaed35ad3620785c3961e49aa6f173596d743be.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d29714cc76b38157e3cbd034c66e1ec808eb4c19">
+        <dex dex="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-25.0.0_71e0e01249d7c85d1154df8d6b38342daf43f7d5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/test/Documents/androidsdk/sdk/extras/android/m2repository/com/android/support/support-annotations/25.0.0/support-annotations-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a22d2cc94da87b254451fa8ed28afc30b4653773">
+        <dex dex="/Users/test/Documents/h5_study/weex_study/MyWeexDemo/app/build/intermediates/pre-dexed/debug/support-annotations-25.0.0_729a62e6474254e6379c61fed4ef1f42474d91af.jar" />
+    </item>
+
+</items>
