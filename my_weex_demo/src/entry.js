@@ -11,6 +11,9 @@ import mixins from './mixins'
 // register global mixins.
 Vue.mixin(mixins)
 
+// 全局注册组件
+Vue.component('wxc-tip', weex.requireModule('weex-components'));
+
 new Vue(Vue.util.extend({ el: '#root', router }, App))
 
 router.push('/')

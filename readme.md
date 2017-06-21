@@ -94,6 +94,9 @@ Module 扩展 非 UI 的特定功能。例如 sendHttp、openURL 等。
 本demo中BridgeModule实现js与native通信。
 #### Component
 Component 扩展 实现特别功能的 Native 控件。例如：RichTextview，RefreshListview 等。
+##### 本实例中自定义了 RichText、SwitchBar等原生控件给h5调用
+需注意：`public class SwitchBar extends WXComponent<Switch>`而不是`public class SwitchBar extends WXComponent`，否则不生效。
+在MainApplication中进行`WXSDKEngine.registerComponent("switchBtn", SwitchBar.class)`即可在vue中`<switchBtn>`调用。
 #### Adapter
 Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现这些接口来定制自己的业务。例如：图片下载等。
 

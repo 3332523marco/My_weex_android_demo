@@ -4,10 +4,9 @@
             <div class="panel">
                 <text class="text">{{num}}</text>
             </div>
-            </SwitchBar>
         </div>
         <loading class="loading" @loading="onloading" :display="showLoading">
-            <text class="indicator">Loading ...</text>
+            <loading-indicator style="height:60;width:60;color:#3192e1"></loading-indicator>
         </loading>
     </scroller>
 </template>
@@ -62,7 +61,15 @@ export default {
 }
 
 .loading {
-    justify-content: center;
+    height: 120px;
+    width: 750px;
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
 }
 
 .indicator {

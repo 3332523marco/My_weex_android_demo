@@ -9,6 +9,7 @@ import com.taobao.weex.common.WXException;
 import shengyuan.myweexdemo.adapter.ImageAdapter;
 import shengyuan.myweexdemo.module.BridgeModule;
 import shengyuan.myweexdemo.view.RichText;
+import shengyuan.myweexdemo.view.SwitchBar;
 
 /**
  * Created by Marco on 17/6/12.
@@ -23,6 +24,7 @@ public class MainApplication extends Application {
         try {
             WXSDKEngine.registerModule("bridgeModule", BridgeModule.class);
             WXSDKEngine.registerComponent("richtext", RichText.class);
+            WXSDKEngine.registerComponent("switchBtn", SwitchBar.class);
         } catch (WXException e) {
             e.printStackTrace();
         }

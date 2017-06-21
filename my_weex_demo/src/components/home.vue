@@ -1,26 +1,25 @@
 <template>
     <div class="wrapper">
-        <text  class="button" @click="callNative">callNative2</text>
+        <text class="button" @click="callNative">callNative2</text>
         <child/>
-        <SwitchBar class="dropdown" :status-id="status">
-        </SwitchBar>
-         
+       <!--  <SwitchBar class="dropdown" :status-id="status">
+        </SwitchBar> -->
+        <richtext tel="1391486934">点击跳转到拨打电话</richtext>
     </div>
 </template>
 <script>
-import Child from './child.vue'
-import SwitchBar from './switchbar.vue'
+import Child from './homechild.vue'
 
 export default {
     data() {
             return {
                 showLoading: 'hide',
-                status: '1'
+                status: '1',
+                img: 'http://gw.alicdn.com/tps/i2/TB1DpsmMpXXXXabaXXX20ySQVXX-512-512.png_400x400.jpg'
             }
         },
         components: {
-            Child,
-            SwitchBar
+            Child
         },
         methods: {
             callNative() {
@@ -31,6 +30,9 @@ export default {
                     //调用nativie中的方法打日志，得出回调成功了
                     weex.requireModule('bridgeModule').log(map);
                 })
+            },
+            test(){
+
             }
         }
 }
