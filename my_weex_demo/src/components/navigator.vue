@@ -10,14 +10,14 @@ var modal = weex.requireModule('modal')
 export default {
     methods: {
         toNav(event) {
-            var url = 'file://assets/components/home.js'
+            var url = 'file://assets/components/listinfo.js'
             navigator.push({
                 url: url,
                 animated: "true"
             }, event => {
-                modal.toast({
-                    message: 'callback: ' + event
-                })
+                // modal.toast({
+                //     message: 'callback: ' + event
+                // })
             })
         }
     }

@@ -1,19 +1,21 @@
 <template>
-    <div>
+    <div class="wrap">
         <Osclist class="list" ref='list' @refresh="onRefresh" @loading="onLoading">
-            <cell class="cell" v-for="(value, key) in lists">
+            <cell class="cell" v-for="(value, key) in lists"  @click="toNative">
                 <div :class="[value.expand?'panel': 'expandpanel']">
                     <div style="flex-direction:row;text-align:center;">
-                        <div style="flex:1;justify-content:center;flex-direction:row;" @click="callShow(key)">
+                        <div style="flex:1;justify-content:center;flex-direction:row;text-align:center;">
                             <div>
-                                <image style="width:60;height:60;" src="https://img.alicdn.com/tps/i1/TB1nFvPIXXXXXbUXXXXUAkPJpXX-87-87.png"></image>
+                                <image style="width:60;height:60;text-align:center;margin-top:25" src="https://img.alicdn.com/tps/i1/TB1nFvPIXXXXXbUXXXXUAkPJpXX-87-87.png"></image>
                             </div>
-                            <div style="margin-left:15;margin-top:10">
-                                <text style="font-size:30;text-align:center;">item {{key}}</text>
+                            <div style="margin-left:15;">
+                                <text class="infotip">15:20 一次</text>
+                                <text class="titletip">智能网关</text>
+                                <text class="infotip">已开启</text>
                             </div>
                         </div>
-                        <div style="flex:1;justify-content:flex-end;flex-direction:row;margin-right:20">
-                                   <switchBtn style="height:50;width:100"></switchBtn>
+                        <div style="flex:1;justify-content:flex-end;flex-direction:row;margin-right:20;margin-top:30">
+                            <switchBtn style="height:50;width:100;text-align:center;" :callnative="value.data"></switchBtn>
                         </div>
                     </div>
                 </div>
@@ -29,27 +31,27 @@
 const modal = weex.requireModule('modal')
 const LOADMORE_COUNT = 4
 import Osclist from './customview/osc-list.vue'
+var navigator = weex.requireModule('navigator')
 
 export default {
     data() {
             return {
-                showSwitch: true,
                 showLoading: false,
                 lists: [{
                     expand: true,
-                    loadmore: false
+                    data: ''
                 }, {
                     expand: true,
-                    loadmore: false
+                    data: ''
                 }, {
                     expand: true,
-                    loadmore: false
+                    data: ''
                 }, {
                     expand: true,
-                    loadmore: false
+                    data: ''
                 }, {
                     expand: true,
-                    loadmore: false
+                    data: ''
                 }]
             }
         },
@@ -65,13 +67,34 @@ export default {
             // setTimeout(() => {
             //     this.showSwitch = false;
             // }, 0)
+            var self = this;
+            var globalEvent = weex.requireModule('globalEvent');
+            globalEvent.addEventListener("switchEvent", function(e) {
+                var json = JSON.stringify(e);
+                var bean = JSON.parse(json);
+                self.lists[bean.index].data = JSON.stringify(e);
+                Vue.set(self.lists, bean.index, self.lists[bean.index]);
+                // weex.requireModule('globalEvent').callEventComing('vue call native： ' + JSON.stringify(e));
+            });
+
         },
         methods: {
+            toNative() {
+                var url = 'file://assets/components/listinfo.js'
+                navigator.push({
+                    url: url,
+                    animated: "true"
+                }, event => {
+                    // modal.toast({
+                    //     message: 'callback: ' + event
+                    // })
+                })
+            },
             callShow(isShow) {
                 this.showLoading = true;
                 this.lists.$set(isShow, Object.assign({}, this.lists[isShow], {
                         expand: !this.lists[isShow].expand,
-                        loadmore: true
+                        data: ''
                     }))
                     // weex.requireModule('bridgeModule').printLog('isShow ' + isShow);
             },
@@ -89,7 +112,7 @@ export default {
                 for (let i = length; i < length + LOADMORE_COUNT; ++i) {
                     this.lists.push(Object.assign({}, {
                         expand: true,
-                        loadmore: false
+                        data: ''
                     }))
                 }
 
@@ -101,32 +124,21 @@ export default {
 }
 </script>
 <style scoped>
-.example {
-    flex-direction: row;
-    justify-content: flex-start;
-    margin-top: 60px;
-}
-
-.label {
-    font-size: 40px;
-    line-height: 60px;
-    width: 350px;
-    color: #666;
-    text-align: right;
-    margin-right: 20px;
+.wrap {
+    background-color: #f0f0f0;
 }
 
 .panel {
     width: 600px;
-    height: 250px;
+    height: 200px;
     margin-left: 75px;
     margin-top: 35px;
     flex-direction: column;
     justify-content: center;
     border-width: 2px;
     border-style: solid;
-    border-color: #eee;
-    background-color: #eee;
+    border-color: #fff;
+    background-color: #fff;
     border-bottom-right-radius: 16;
     border-bottom-left-radius: 16;
     border-top-right-radius: 16;
@@ -135,15 +147,15 @@ export default {
 
 .expandpanel {
     width: 600px;
-    height: 250px;
+    height: 200px;
     margin-left: 75px;
     margin-top: 35px;
     flex-direction: column;
     justify-content: center;
     border-width: 2px;
     border-style: solid;
-    border-color: #eee;
-    background-color: #eee;
+    border-color: #fff;
+    background-color: #fff;
     border-top-right-radius: 16;
     border-top-left-radius: 16;
     border-bottom-right-radius: 0;
@@ -158,8 +170,8 @@ export default {
     justify-content: center;
     border-width: 2px;
     border-style: solid;
-    border-color: #eee;
-    background-color: #eee;
+    border-color: #fff;
+    background-color: #fff;
     border-bottom-right-radius: 16;
     border-bottom-left-radius: 16;
 }
@@ -190,5 +202,18 @@ export default {
     font-size: 50px;
     text-align: center;
     color: #41B883;
+}
+
+.infotip {
+    font-size: 25px;
+    text-align: center;
+    color: #b5b5b5;
+}
+
+.titletip {
+    font-size: 35px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 </style>
