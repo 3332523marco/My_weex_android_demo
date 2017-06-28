@@ -4,6 +4,9 @@ export default {
             if (this.$router) {
                 this.$router.push(to)
             }
+        },
+        test68() {
+            weex.requireModule('bridgeModule').printLog('test68 ');
         }
     }
 }

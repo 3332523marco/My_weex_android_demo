@@ -39,8 +39,8 @@ public class SwitchBar extends WXComponent<Switch> {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 //通过globalEvent回传信息到vue
                 Map<String, Object> params = new HashMap<>();
-                params.put("index", index);
-                params.put("isChecked", isChecked);
+                    params.put("index", index);
+                    params.put("isChecked", isChecked);
                 getInstance().fireGlobalEventCallback("switchEvent", params);
             }
         });

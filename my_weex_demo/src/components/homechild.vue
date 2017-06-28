@@ -6,7 +6,11 @@ module.exports = {
     data: {
         items: []
     },
-    methods: {}
+    methods: {
+        tt() {
+            weex.requireModule('bridgeModule').printLog('tttttttt ');
+        }
+    }
 }
 </script>
 <style scoped>

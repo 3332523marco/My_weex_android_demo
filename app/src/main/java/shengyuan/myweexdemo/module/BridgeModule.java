@@ -10,6 +10,9 @@ import com.taobao.weex.common.WXModule;
 import java.util.HashMap;
 import java.util.Map;
 
+import de.greenrobot.event.EventBus;
+import shengyuan.myweexdemo.eventbus.EventCenter;
+
 /**
  * Created by Marco on 17/6/6.
  */
@@ -32,5 +35,11 @@ public class BridgeModule extends WXModule {
     @JSMethod
     public void log(String str){
         Log.e("123", str);
+    }
+
+    @JSMethod
+    public void events(String str){
+        Log.i("papappa","str   "+str);
+        EventBus.getDefault().post(new EventCenter(1,str));
     }
 }

@@ -55,6 +55,9 @@ import com.taobao.weex.ui.component.WXComponent;
 import com.taobao.weex.utils.WXFileUtils;
 import com.taobao.weex.utils.WXLogUtils;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -62,6 +65,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import shengyuan.myweexdemo.base.BaseActivity;
+import shengyuan.myweexdemo.eventbus.EventCenter;
 
 
 public class WXPageActivity extends BaseActivity implements IWXRenderListener, Handler.Callback, WXSDKInstance.NestedInstanceInterceptor {
@@ -76,6 +80,7 @@ public class WXPageActivity extends BaseActivity implements IWXRenderListener, H
   private BroadcastReceiver mReceiver;
   private Uri mUri;
   private HashMap mConfigMap = new HashMap<String, Object>();
+  private String mCurrentUri ;
 
   @Override
   public void onCreateNestInstance(WXSDKInstance instance, NestedContainer container) {
@@ -118,6 +123,7 @@ public class WXPageActivity extends BaseActivity implements IWXRenderListener, H
     }
 
     Log.e("TestScript_Guide mUri==", mUri.toString());
+    mCurrentUri = mUri.toString();
     initUIAndData();
 
     if(WXPAGE.equals(mUri.getScheme())) {
@@ -137,7 +143,22 @@ public class WXPageActivity extends BaseActivity implements IWXRenderListener, H
     }
     mInstance.onActivityCreate();
     registerBroadcastReceiver();
+  }
 
+  @Override
+  protected void onEventComing(EventCenter eventCenter) {
+      String data = (String) eventCenter.getData();
+      try {
+      JSONObject  jsonObject = new JSONObject(data);
+      if(mCurrentUri.contains(jsonObject.optString("type"))){
+        //通过globalEvent回传信息到vue
+        Map<String, Object> params = new HashMap<>();
+        params.put("data", jsonObject.optString("data"));
+        mInstance.fireGlobalEventCallback("listinfo", params);
+      }
+      } catch (JSONException e) {
+        e.printStackTrace();
+      }
   }
 
   @Override

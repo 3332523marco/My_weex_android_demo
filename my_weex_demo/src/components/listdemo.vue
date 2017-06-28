@@ -1,12 +1,12 @@
 <template>
     <div class="wrap">
         <Osclist class="list" ref='list' @refresh="onRefresh" @loading="onLoading">
-            <cell class="cell" v-for="(value, key) in lists"  @click="toNative">
+            <cell class="cell" v-for="(value, key) in lists" @click="toNative">
                 <div :class="[value.expand?'panel': 'expandpanel']">
                     <div style="flex-direction:row;text-align:center;">
                         <div style="flex:1;justify-content:center;flex-direction:row;text-align:center;">
                             <div>
-                                <image style="width:60;height:60;text-align:center;margin-top:25" src="https://img.alicdn.com/tps/i1/TB1nFvPIXXXXXbUXXXXUAkPJpXX-87-87.png"></image>
+                                <image style="width:100px;height:100px;text-align:center;margin-top:5" src="http://www.easyicon.net/api/resizeApi.php?id=1204593&size=128"></image>
                             </div>
                             <div style="margin-left:15;">
                                 <text class="infotip">15:20 一次</text>
@@ -15,7 +15,7 @@
                             </div>
                         </div>
                         <div style="flex:1;justify-content:flex-end;flex-direction:row;margin-right:20;margin-top:30">
-                            <switchBtn style="height:50;width:100;text-align:center;" :callnative="value.data"></switchBtn>
+                            <switchBtn style="height:60;width:100;text-align:center;" :callnative="value.data"></switchBtn>
                         </div>
                     </div>
                 </div>
@@ -31,6 +31,8 @@
 const modal = weex.requireModule('modal')
 const LOADMORE_COUNT = 4
 import Osclist from './customview/osc-list.vue'
+import bus from '../common'
+
 var navigator = weex.requireModule('navigator')
 
 export default {
@@ -62,33 +64,26 @@ export default {
             // setTimeout(() => {
             //     this.showSwitch = false;
             // }, 0)
+
         },
         created: function() {
             // setTimeout(() => {
             //     this.showSwitch = false;
             // }, 0)
             var self = this;
-            var globalEvent = weex.requireModule('globalEvent');
-            globalEvent.addEventListener("switchEvent", function(e) {
+            bus.methods.registerEvent(bus.apievent.switchEvent, function(e) {
                 var json = JSON.stringify(e);
                 var bean = JSON.parse(json);
                 self.lists[bean.index].data = JSON.stringify(e);
                 Vue.set(self.lists, bean.index, self.lists[bean.index]);
-                // weex.requireModule('globalEvent').callEventComing('vue call native： ' + JSON.stringify(e));
             });
-
         },
         methods: {
+            showTip() {
+                weex.requireModule('bridgeModule').printLog('showTip ');
+            },
             toNative() {
-                var url = 'file://assets/components/listinfo.js'
-                navigator.push({
-                    url: url,
-                    animated: "true"
-                }, event => {
-                    // modal.toast({
-                    //     message: 'callback: ' + event
-                    // })
-                })
+                bus.methods.go('file://assets/components/listinfo.js');
             },
             callShow(isShow) {
                 this.showLoading = true;

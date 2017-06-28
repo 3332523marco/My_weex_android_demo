@@ -1,82 +1,75 @@
 <template>
-    <scroller class="scroller">
-        <div class="cell" v-for="num in lists">
-            <div class="panel">
-                <text class="text">{{num}}</text>
-            </div>
-        </div>
-        <loading class="loading" @loading="onloading" :display="showLoading">
-            <loading-indicator style="height:60;width:60;color:#3192e1"></loading-indicator>
-        </loading>
-    </scroller>
+    <div>
+        <list class="list" ref='list' @refresh="onRefresh" @loading="onLoading">
+            <cell class="row" v-for="(value, i) in lists" :index="i" v-if="value.type == itemId" @click="onItemClick(i)">
+                <div class="item">
+                    <div>
+                        <image style="width:80;height:80;text-align:center;" :src="value.src"></image>
+                    </div>
+                    <text class="item_text">{{value.name}}</text>
+                </div>
+            </cell>
+        </list>
+    </div>
 </template>
 <script>
 const modal = weex.requireModule('modal')
 const LOADMORE_COUNT = 4
+import bus from '../common'
+var navigator = weex.requireModule('navigator')
 
 export default {
     data() {
             return {
-                showLoading: 'hide',
-                lists: [1, 2, 3, 4, 5]
+                lists: [],
+                itemId: ''
             }
         },
+        beforeCreate: function() {
+
+        },
+        created: function() {
+            var url = this.$getConfig().bundleUrl;
+            this.itemId = bus.methods.getItemId(url);
+            bus.methods.getItem('listData', event => {
+                this.lists = JSON.parse(event.data);
+            })
+            bus.methods.removeItem('listData');
+        },
         methods: {
-            onloading(event) {
-                modal.toast({
-                    message: 'loading',
-                    duration: 1
-                })
-                this.showLoading = 'show'
-                setTimeout(() => {
-                    const length = this.lists.length
-                    for (let i = length; i < length + LOADMORE_COUNT; ++i) {
-                        this.lists.push(i + 1)
-                    }
-                    this.showLoading = 'hide'
-                }, 1500)
+            onItemClick(index) {
+                var selectName = this.lists[index].name;
+                bus.methods.sendNative(bus.methods.getBaseParams("listinfo.js", selectName));
+                bus.methods.goBack();
+            },
+            onRefresh(e) {
+
+            },
+
+            onLoading() {
+                console.log('onLoading')
+
             }
         }
 }
 </script>
 <style scoped>
-.panel {
-    width: 600px;
-    height: 250px;
-    margin-left: 75px;
-    margin-top: 35px;
-    margin-bottom: 35px;
-    flex-direction: column;
-    justify-content: center;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #DDDDDD;
-    background-color: #F5F5F5;
-}
-
-.text {
-    font-size: 50px;
-    text-align: center;
-    color: #41B883;
-}
-
-.loading {
-    height: 120px;
+.row {
     width: 750px;
-    display: -ms-flex;
-    display: -webkit-flex;
-    display: flex;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    align-items: center;
 }
 
-.indicator {
-    color: #888888;
-    font-size: 42px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+.item {
+    border-bottom-width: 2px;
+    border-bottom-color: #c0c0c0;
+    padding: 20px;
+    flex: 1;
+    flex-direction: row;
+}
+
+.item_text {
+    margin-left: 25px;
     text-align: center;
+    margin-top: 25px;
+    font-size: 30px;
 }
 </style>

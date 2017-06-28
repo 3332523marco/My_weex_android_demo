@@ -2,8 +2,16 @@
     <div>
         <Osclist class="list" ref='list' @refresh="onRefresh" @loading="onLoading">
             <cell class="row" v-for="(i, row) in rows" :index="i">
+                <!--  <div class="item">
+                    <text class="item-title">row {{row}}</text>
+                </div> -->
                 <div class="item">
-                    <text class="item-title">row {{i}}</text>
+                    <div>
+                        <image style="width:80;height:80;text-align:center;" src="http://www.easyicon.net/api/resizeApi.php?id=1204593&size=128"></image>
+                    </div>
+                    <div class="item_text">
+                        <text class="item-title">row {{row}}</text>
+                    </div>
                 </div>
             </cell>
         </Osclist>
@@ -17,11 +25,18 @@
 }
 
 .item {
-    justify-content: center;
     border-bottom-width: 2px;
     border-bottom-color: #c0c0c0;
-    height: 100px;
     padding: 20px;
+    flex: 1;
+    flex-direction: row;
+}
+
+.item_text {
+    margin-left: 25px;
+    text-align: center;
+    margin-top: 25px;
+    font-size: 30px;
 }
 </style>
 <script>

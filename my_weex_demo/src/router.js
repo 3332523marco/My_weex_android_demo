@@ -10,7 +10,7 @@ Vue.use(Router)
 export default new Router({
     // mode: 'abstract',
     routes: [
-        { path: '/home', component: OscListdemo },
+        { path: '/home', component: Home },
         { path: '/list', component: List },
         { path: '/navigator', component: Switchdemo },
         { path: '/', redirect: '/home' }

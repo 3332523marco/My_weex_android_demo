@@ -1,29 +1,11 @@
-<!-- <template>
-    <div>
-        <Header/>
-        <router-view></router-view>
-    </div>
-</template>
-<script>
-import Header from './components/header.vue'
-
-module.exports = {
-    data: {
-        items: []
-    },
-    components: {
-        Header
-    }
-}
-</script>
- -->
 <template>
     <div style="flex-direction: column;">
-        <Osctabbar :tabItems="tabItems" @tabBarOnClick="tabBarOnClick"></Osctabbar>
+        <Osctabbar :tabType="1" :tabItems="tabItems" @tabBarOnClick="tabBarOnClick"></Osctabbar>
     </div>
 </template>
 <script>
 import Osctabbar from './components/customview/osc-tabbar.vue'
+import tr from './components/listdemo.vue'
 
 export default {
     data() {
@@ -35,7 +17,7 @@ export default {
                     icon: '',
                     image: 'http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png',
                     selectedImage: 'http://gtms04.alicdn.com/tps/i4/TB16jjPMpXXXXazXVXX9t7RGVXX-46-46.png',
-                    src: 'file://assets/components/home.js',
+                    src: 'file://assets/components/home.js?item=2',
                     visibility: 'visible'
                 }, {
                     index: 1,
@@ -44,7 +26,7 @@ export default {
                     icon: '',
                     image: 'http://gtms03.alicdn.com/tps/i3/TB1LEn9MpXXXXaUXpXX9t7RGVXX-46-46.png',
                     selectedImage: 'http://gtms02.alicdn.com/tps/i2/TB1qysbMpXXXXcnXXXX9t7RGVXX-46-46.png',
-                    src: 'file://assets/components/navigator.js',
+                    src: 'file://assets/components/home.js',
                     visibility: 'hidden'
                 }, {
                     index: 2,
@@ -59,12 +41,33 @@ export default {
             }
         },
         components: {
-            Osctabbar
+            Osctabbar,
+            tr
         },
         methods: {
             tabBarOnClick(e) {
                 console.log('tabBarOnClick', e.index)
+                // this.$emit('a-msg','hello world!!!');
+
             }
         }
 }
 </script>
+
+
+<!-- <template>
+    <div>
+        <Header/>
+            <router-view></router-view>
+    </div>
+</template>
+<script>
+import Header from './components/customview/header.vue'
+
+module.exports = {
+    components: {
+        Header
+    }
+}
+</script>
+ -->

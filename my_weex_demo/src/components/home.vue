@@ -1,14 +1,16 @@
 <template>
     <div class="wrapper">
         <text class="button" @click="callNative">callNative2</text>
-        <child/>
-       <!--  <SwitchBar class="dropdown" :status-id="status">
+        <homechild/>
+        <!--  <SwitchBar class="dropdown" :status-id="status">
         </SwitchBar> -->
         <richtext tel="1391486934">点击跳转到拨打电话</richtext>
+        <Listdemo ref="test" />
     </div>
 </template>
 <script>
-import Child from './homechild.vue'
+// import Child from './homechild.vue'
+import Listdemo from './listdemo.vue'
 
 export default {
     data() {
@@ -18,22 +20,23 @@ export default {
                 img: 'http://gw.alicdn.com/tps/i2/TB1DpsmMpXXXXabaXXX20ySQVXX-512-512.png_400x400.jpg'
             }
         },
-        components: {
-            Child
-        },
+        // components: {
+        //     Child
+        // },
         methods: {
             callNative() {
-                var mode = weex.requireModule('bridgeModule');
-                mode.printLogs("weex is beach", function(map) {
-                    //modal.toast({title:"wori",duration:2})
-                    //console.log(map);
-                    //调用nativie中的方法打日志，得出回调成功了
-                    weex.requireModule('bridgeModule').log(map);
-                })
-            },
-            test(){
-
+                this.$refs.test.showTip();
+                // var mode = weex.requireModule('bridgeModule');
+                // mode.printLogs("weex is beach", function(map) {
+                //     //modal.toast({title:"wori",duration:2})
+                //     //console.log(map);
+                //     //调用nativie中的方法打日志，得出回调成功了
+                //     weex.requireModule('bridgeModule').log(map);
+                // })
             }
+        },
+        created: function() {
+           
         }
 }
 </script>
