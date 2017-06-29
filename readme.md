@@ -100,6 +100,10 @@ Component 扩展 实现特别功能的 Native 控件。例如：RichTextview，R
 #### Adapter
 Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现这些接口来定制自己的业务。例如：图片下载等。
 
- 
+### Android 上遇到的坑
+本demo通过navigator实现多页面交互，所以不支持router、vuex、mixins、组件全局注册
+如果单页面的话 可以使用router、vuex，但是在调试中发现weex不支持vuex中的mapActions、mapGetters等方法映射
+如果需要全局方法调用或者传值，可以参考本例中common/index.js   
+传值：可以通过h5->native->h5等方式 也就是native作为数据传输中心，如果h5中的页面a需要发消息给上一页页面b，可以通过`weex.requireModule('bridgeModule').events(data);`先把值传给native  然后用native通过其通信框架eventbus发送信息到对应的navigator启动页面中，再回传信息至h5页面  
  
  
