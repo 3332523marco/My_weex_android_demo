@@ -101,9 +101,19 @@ Component 扩展 实现特别功能的 Native 控件。例如：RichTextview，R
 Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现这些接口来定制自己的业务。例如：图片下载等。
 
 ### Android 上遇到的坑
+#### 兼容问题
 本demo通过navigator实现多页面交互，所以不支持router、vuex、mixins、组件全局注册
 如果单页面的话 可以使用router、vuex，但是在调试中发现weex不支持vuex中的mapActions、mapGetters等方法映射
-如果需要全局方法调用或者传值，可以参考本例中common/index.js   
-传值：可以通过h5->native->h5等方式 也就是native作为数据传输中心，如果h5中的页面a需要发消息给上一页页面b，可以通过`weex.requireModule('bridgeModule').events(data);`先把值传给native  然后用native通过其通信框架eventbus发送信息到对应的navigator启动页面中，再回传信息至h5页面  
+如果需要全局方法或常量调用，可以参考本例中common/index.js   
+#### 传值
+传值：可以通过h5->native->h5等方式 也就是native作为数据传输中心，如果h5中的页面a需要发消息给上一页页面b，可以通过`weex.requireModule('bridgeModule').events(data);`先把值传给native  然后用native通过fireGlobalEventCallback回调信息给通过globalEvent注册的h5页面 
+#### 存储
+使用weex提供的storage组件，注意因为浏览器限制了大小，需控制在5m以内，所以页面如果销毁的时候建议把对应的storage数据清除，以免造成存储空间用完。
+### Weex和ReactNative对比
+weex使用V8， ReactNative使用JSCore，本人当初学习react的时候，就考虑过要学react native 后来发现环境搭建配置很麻烦且一套代码无法两端运行 需要各写一套 觉得很繁琐 所以毅然选择了weex，简单易上手，且支持当下流行的轻量级vue框架。
+异同地址：`https://zhuanlan.zhihu.com/p/21677103`
+
+
+
  
  
