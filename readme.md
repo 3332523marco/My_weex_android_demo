@@ -2,7 +2,9 @@
 本demo中使用到了vue_router、js和原生通信、调用原生组件等，在使用vue_router时，发现在weex中效率表现不佳，很多坑，通过router进行页面切换会出现view闪跳以及崩溃等现象，故不建议使用router进行页面管理切换，可以使用weex_tabbar、navigator或者自己写控件。weex还在发展的道路上，但坚信混合开发是移动互联网发展的趋势，大家一起努力哈。转发需注明作者：马小鹏 marco 谢谢哈
 ## 简介
 Weex 表面上是一个客户端技术，但实际上它串联起了从本地开发环境到云端部署和分发的整个链路。开发者首先可以在本地像撰写 web 页面一样撰写一个 app 的页面，然后编译成一段 JavaScript 代码，形成 Weex 的一个 JS bundle；在云端，开发者可以把生成的 JS bundle 部署上去，然后通过网络请求或预下发的方式传递到用户的移动应用客户端；在移动应用客户端里，WeexSDK 会准备好一个 JavaScript 引擎，并且在用户打开一个 Weex 页面时执行相应的 JS bundle，并在执行过程中产生各种命令发送到 native 端进行的界面渲染或数据存储、网络通信、调用设备功能、用户交互响应等移动应用的场景实践；同时，如果用户没有安装移动应用，他仍然可以在浏览器里打开一个相同的 web 页面，这个页面是使用相同的页面源代码，通过浏览器里的 JavaScript 引擎运行起来的。
-![QR Code](http://weex.apache.org/cn/guide/images/flow.png =800x300)
+
+![QR Code](pic.png)
+
 ## 安装weex-toolkit 工具
 使用 npm 安装:
 
