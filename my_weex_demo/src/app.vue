@@ -26,7 +26,7 @@ export default {
                     icon: '',
                     image: 'http://gtms03.alicdn.com/tps/i3/TB1LEn9MpXXXXaUXpXX9t7RGVXX-46-46.png',
                     selectedImage: 'http://gtms02.alicdn.com/tps/i2/TB1qysbMpXXXXcnXXXX9t7RGVXX-46-46.png',
-                    src: 'file://assets/components/home.js',
+                    src: 'file://assets/components/list_appear_demo.js',
                     visibility: 'hidden'
                 }, {
                     index: 2,

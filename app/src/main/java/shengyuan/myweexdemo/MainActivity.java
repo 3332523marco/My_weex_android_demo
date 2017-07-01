@@ -1,20 +1,25 @@
 package shengyuan.myweexdemo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 
 import com.taobao.weex.IWXRenderListener;
 import com.taobao.weex.WXSDKInstance;
 import com.taobao.weex.common.WXRenderStrategy;
 import com.taobao.weex.utils.WXFileUtils;
+import com.taobao.weex.utils.WXLogUtils;
 
 public class MainActivity extends AppCompatActivity implements IWXRenderListener {
     WXSDKInstance mWXSDKInstance;
+    private ViewGroup mContainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//      setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main);
+        mContainer = (ViewGroup) findViewById(R.id.container);
 
         mWXSDKInstance = new WXSDKInstance(this);
         mWXSDKInstance.registerRenderListener(this);
@@ -34,7 +39,17 @@ public class MainActivity extends AppCompatActivity implements IWXRenderListener
 
     @Override
     public void onViewCreated(WXSDKInstance instance, View view) {
-        setContentView(view);
+        WXLogUtils.e("into--[onViewCreated]");
+        View wrappedView = null;
+        if(wrappedView != null){
+            view = wrappedView;
+        }
+
+        if(view.getParent() == null) {
+            mContainer.addView(view);
+        }
+        mContainer.requestLayout();
+        Log.d("WARenderListener", "renderSuccess");
     }
 
     @Override
