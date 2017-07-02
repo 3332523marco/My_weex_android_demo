@@ -1,7 +1,7 @@
 <template>
     <div>
         <div ref="test" @click="move" class="box"></div>
-        <list ref="list" class="list">
+        <list ref="list" class="list" append="tree" offset-accuracy="10" @scroll="scrollHandler">
             <cell v-for="(v,i) in rows" append="tree" :index="i" :key="i" class="row" @appear="onappear(i, $event)" offset-accuracy="10" @disappear="ondisappear(i, $event)">
                 <div class="item">
                     <text class="item-title">row {{v.id}}</text>
@@ -65,9 +65,12 @@ module.exports = {
     mounted: function() {
         setTimeout(() => {
             this.isInit = true;
-        }, 20)
+        }, 500)
     },
     methods: {
+        scrollHandler: function(e) {
+                  weex.requireModule('bridgeModule').log("scrollHandler ");
+        },
         onappear: function(idx, e) {
             var appearId = this.rows[idx].id;
             console.log('+++++', appearId);
@@ -93,28 +96,35 @@ module.exports = {
             if (!this.isInit) {
                 return;
             }
+
             if (appearIds[0] == 1) {
+                // if(this.expend){
+                //     return;
+                // }
                 //展示
                 this.startAnimaition(this.$refs.test, 0);
                 this.startAnimaition(this.$refs.list, 0);
+                this.expend = true;
             } else {
+                // if(!this.expend){
+                //     return;
+                // }
                 //收缩
                 this.startAnimaition(this.$refs.test, -100);
                 this.startAnimaition(this.$refs.list, -100);
+                this.expend = false;
             }
             // this.appearIds = appearIds;
             // this.appearMax = appearIds[appearIds.length - 1];
             // this.appearMin = appearIds[0];
         },
         startAnimaition(ref, y) {
-            var index = bus.methods.checkPosition(ref, this.animations);
-            if (index != -1) {
-                weex.requireModule('bridgeModule').log("testEl " + ref);
-                return;
-            }
-            weex.requireModule('bridgeModule').log("push " + ref);
+            // var index = bus.methods.checkPosition(ref, this.animations);
+            // if (index != -1) {
+            //     return;
+            // }
 
-            this.animations.push(ref);
+            // this.animations.push(ref);
             animation.transition(ref, {
                 styles: {
                     color: '#FF0000',
@@ -125,8 +135,7 @@ module.exports = {
                 timingFunction: 'ease',
                 delay: 0 //ms
             }, function() {
-                weex.requireModule('bridgeModule').log("finished "+ref);
-                bus.methods.remove(ref, this.animations);
+                // bus.methods.remove(ref, this.animations);
                 // modal.toast({ message: 'animation finished.' })
             })
         }
@@ -134,6 +143,7 @@ module.exports = {
     data: function() {
         return {
             isInit: false,
+            expend: true,
             animations: [],
 
             appearMin: 1,
