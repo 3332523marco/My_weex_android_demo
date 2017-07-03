@@ -2,6 +2,7 @@ package shengyuan.myweexdemo.adapter;
 
 import android.net.Uri;
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Callback;
@@ -20,7 +21,7 @@ public class ImageAdapter implements IWXImgLoaderAdapter {
     @Override
     public void setImage(final String url, final ImageView view,
                          WXImageQuality quality, final WXImageStrategy strategy) {
-
+        Log.i("setImage","setImage setImage "+url);
         WXSDKManager.getInstance().postOnUiThread(new Runnable() {
 
             @Override
@@ -35,6 +36,8 @@ public class ImageAdapter implements IWXImgLoaderAdapter {
                 String temp = url;
                 if (url.startsWith("//")) {
                     temp = "http:" + url;
+                }else{
+                    temp =   url.replace("assets","/android_asset");
                 }
                 if (view.getLayoutParams().width <= 0 || view.getLayoutParams().height <= 0) {
                     return;

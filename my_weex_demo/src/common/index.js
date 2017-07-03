@@ -53,15 +53,15 @@ exports.methods = {
         }, () => {})
     },
     checkPosition(val, list) {
-        for (var i = 0; i < this.length; i++) {
-            if (this[i] == val) return i;
+        for (var i = 0; i < list.length; i++) {
+            if (list[i] == val) return i;
         }
         return -1;
     },
     remove(val, list) {
         var index = this.checkPosition(val, list);
         if (index > -1) {
-            this.list.splice(index, 1);
+            list.splice(index, 1);
         }
     }
 }
