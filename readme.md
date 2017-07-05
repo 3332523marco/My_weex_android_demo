@@ -109,12 +109,12 @@ Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现这
 如果需要全局方法或常量调用，可以参考本例中common/index.js   
 #### 传值
 
-#####fireGlobalEventCallback
+* fireGlobalEventCallback
 
 可以通过h5->native->h5等方式 也就是native作为数据传输中心，如果h5中的页面a需要发消息给上一页页面b，可以通过`weex.requireModule('bridgeModule').events(data);`先把值传给native  然后用native通过eventbus找到对应的navigator页面，再通过fireGlobalEventCallback回调信息给通过globalEvent注册的h5页面 
 尝试过直接在module里直接fireGlobalEventCallback回调信息给通过globalEvent注册的h5页面，但是无论设置为异步还是同步都是不成功
 
-#####fireEvent
+* fireEvent
 
 用于组件回调通知，如native封装的原生控件RecyclerView，当你需要设置滑动监听addScrollListener的时候，需要把监听状态返回给h5，这个时候可以用fireEvent进行事件回调，如<list>中的@scroll="scrollHandler"
 
