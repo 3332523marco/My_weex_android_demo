@@ -4,7 +4,7 @@
             <div flex-direction="row" style="flex:1;">
                 <slider class="slider" interval="3000" auto-play="true" offset-x-accuracy="0.1" @scroll="scrollHandler" @change="changeHandler" infinite="false">
                     <div class="slider-pages" v-for="item in itemList">
-                        <image class="img" resize="cover" :src="item.pictureUrl"></image>
+                        <image class="img" ref="img" resize="cover" :src="item.pictureUrl"></image>
                     </div>
                     <indicator class="slider_indicator"></indicator>
                 </slider>

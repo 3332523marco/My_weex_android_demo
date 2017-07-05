@@ -21,7 +21,6 @@ public class ImageAdapter implements IWXImgLoaderAdapter {
     @Override
     public void setImage(final String url, final ImageView view,
                          WXImageQuality quality, final WXImageStrategy strategy) {
-        Log.i("setImage","setImage setImage "+url);
         WXSDKManager.getInstance().postOnUiThread(new Runnable() {
 
             @Override
@@ -34,6 +33,8 @@ public class ImageAdapter implements IWXImgLoaderAdapter {
                     return;
                 }
                 String temp = url;
+                Log.i("setImage","setImage  setImage11 "+temp);
+
                 if (url.startsWith("//")) {
                     temp = "http:" + url;
                 }else{
@@ -43,7 +44,7 @@ public class ImageAdapter implements IWXImgLoaderAdapter {
                     return;
                 }
 
-
+                Log.i("setImage","setImage  setImage "+temp);
                 if (!TextUtils.isEmpty(strategy.placeHolder)) {
                     Picasso.Builder builder = new Picasso.Builder(WXEnvironment.getApplication());
                     Picasso picasso = builder.build();

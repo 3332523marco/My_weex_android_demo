@@ -262,8 +262,8 @@ export default {
     color: #ffffff;
     border-width: 2px;
     border-style: solid;
-    border-color: #41aefa;
-    background-color: #41aefa;
+    border-color: #303F9F;
+    background-color: #303F9F;
     border-bottom-right-radius: 10;
     border-bottom-left-radius: 10;
     border-top-right-radius: 10;

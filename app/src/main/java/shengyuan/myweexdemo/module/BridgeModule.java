@@ -30,14 +30,14 @@ public class BridgeModule extends WXModule {
     public void printLogs(String str, JSCallback callback){
         Toast.makeText(mWXSDKInstance.getContext(), str, Toast.LENGTH_SHORT).show();
         Map<String, Object> map = new HashMap<>();
-        map.put("caicai", "my");
+        map.put("test", "my");
         callback.invokeAndKeepAlive(map);
         //callback.invoke(map);
     }
 
     @JSMethod
     public void log(String str){
-        Log.e("123", str);
+        Log.e(TAG, str);
     }
 
     @JSMethod(uiThread = true) //true为异步  false为同步
