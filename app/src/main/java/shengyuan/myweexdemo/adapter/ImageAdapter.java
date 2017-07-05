@@ -2,7 +2,6 @@ package shengyuan.myweexdemo.adapter;
 
 import android.net.Uri;
 import android.text.TextUtils;
-import android.util.Log;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Callback;
@@ -33,7 +32,6 @@ public class ImageAdapter implements IWXImgLoaderAdapter {
                     return;
                 }
                 String temp = url;
-                Log.i("setImage","setImage  setImage11 "+temp);
 
                 if (url.startsWith("//")) {
                     temp = "http:" + url;
@@ -44,7 +42,6 @@ public class ImageAdapter implements IWXImgLoaderAdapter {
                     return;
                 }
 
-                Log.i("setImage","setImage  setImage "+temp);
                 if (!TextUtils.isEmpty(strategy.placeHolder)) {
                     Picasso.Builder builder = new Picasso.Builder(WXEnvironment.getApplication());
                     Picasso picasso = builder.build();
