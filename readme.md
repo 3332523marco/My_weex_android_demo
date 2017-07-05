@@ -16,7 +16,9 @@ $ npm install -g weex-toolkit
 不建议使用淘宝镜像安装，若使用淘宝镜像安装，可能会出现地址读取失败等问题，可以参考：`http://www.jianshu.com/p/a5e3b3709d62`
 ### 调试 we文件
 `建议：其实weex就是想创建一套属于自己的语法，但实际上和vue几乎一致，只是略有不同，编译效率一致，建议用vue开发，这样可以保持vue的一致性`
+
 这个时候需要用到之前安装的 weex-toolkit 工具。
+
 以home.we为例
 直接执行命令：
 
