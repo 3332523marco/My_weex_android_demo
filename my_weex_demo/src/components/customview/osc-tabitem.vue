@@ -1,5 +1,5 @@
 <template>
-    <div class="container" :style="{ backgroundColor: backgroundColor }" @click="onclickitem">
+    <div class="container" :style="{ backgroundColor: backgroundColor,height:height }" @click="onclickitem">
         <image class="top-line" v-if="type == 1" src="http://gtms03.alicdn.com/tps/i3/TB1mdsiMpXXXXXpXXXXNw4JIXXX-640-4.png"></image>
         <image class="tab-icon" v-if="type == 1" :src="icon"></image>
         <text class="tab-text" :style="{ color: titleColor }">{{title}}</text>
@@ -14,7 +14,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 88px;
     width: 150px;
 }
 
@@ -28,8 +27,8 @@
 
 .tab-icon {
     margin-top: 5px;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
 }
 
 .tab-text {
@@ -44,6 +43,9 @@ export default {
         type: {
             default: 0
         },
+        height:{
+            default: 88
+        },
         index: {
             default: 0
         },
@@ -51,7 +53,7 @@ export default {
             default: ''
         },
         titleColor: {
-            default: '#000000'
+            default: '#979797'
         },
         icon: {
             default: ''

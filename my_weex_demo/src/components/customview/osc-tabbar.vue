@@ -1,14 +1,13 @@
 <template>
     <div class="wrapper">
-        <scroller :class="[tabType == 1?'tabbar_bottom': 'tabbar_top']" ref="tabbar" append="tree" scroll-direction="horizontal"> 
-            <tabitem v-for="(item, index) in tabItems" :key="index" :type="tabType" :index="item.index" :icon="item.icon" :title="item.title" :titleColor="item.titleColor" @tabItemOnClick="tabItemOnClick">
+        <scroller :class="[tabType == 1?'tabbar_bottom': 'tabbar_top']" :style="{height:height }" ref="tabbar" append="tree" scroll-direction="horizontal">
+            <tabitem v-for="(item, index) in tabItems" :key="index" :type="tabType" :height="height" :index="item.index" :icon="item.icon" :title="item.title" :titleColor="item.titleColor" @tabItemOnClick="tabItemOnClick">
             </tabItem>
         </scroller>
         <embed :class="[tabType == 1?'content_bottom': 'content_top']" ref="content" :style="{ visibility: item.visibility }" v-for="(item, index) in tabItems" :key="index" :src="item.src" type="weex">
         </embed>
     </div>
 </template>
-
 <style>
 .wrapper {
     width: 750px;
@@ -35,7 +34,6 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 98px;
 }
 
 .tabbar_top {
@@ -46,7 +44,6 @@
     left: 20px;
     margin-left: 20px;
     right: 0;
-    height: 98px;
 }
 
 .content_top {
@@ -62,6 +59,9 @@
 <script>
 export default {
     props: {
+        height: {
+            default: 88
+        },
         tabType: {
             default: 0
         },
@@ -69,10 +69,10 @@ export default {
             default: []
         },
         selectedColor: {
-            default: '#ff0000'
+            default: '#303F9F'
         },
         unselectedColor: {
-            default: '#000000'
+            default: '#979797'
         }
     },
     data() {

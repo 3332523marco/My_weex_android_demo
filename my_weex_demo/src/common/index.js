@@ -1,6 +1,7 @@
 const globalEvent = weex.requireModule('globalEvent');
 const storage = weex.requireModule('storage')
 const navigator = weex.requireModule('navigator')
+const animation = weex.requireModule('animation')
 
 exports.methods = {
     registerEvent(event, callback) {
@@ -63,6 +64,21 @@ exports.methods = {
         if (index > -1) {
             list.splice(index, 1);
         }
+    },
+    startAnimaition(ref, y) {
+
+        animation.transition(ref, {
+            styles: {
+                color: '#FF0000',
+                transform: 'translate(0px,' + y + ')',
+                transformOrigin: 'center center'
+            },
+            duration: 200, //ms
+            timingFunction: 'ease',
+            delay: 0 //ms
+        }, function() {
+            // modal.toast({ message: 'animation finished.' })
+        })
     }
 }
 

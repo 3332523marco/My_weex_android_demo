@@ -17,6 +17,9 @@ import shengyuan.myweexdemo.eventbus.EventCenter;
  * Created by Marco on 17/6/6.
  */
 public class BridgeModule extends WXModule {
+
+    public static final String TAG = BridgeModule.class.getSimpleName();
+
     @JSMethod
     public void printLog(String str){
         Toast.makeText(mWXSDKInstance.getContext(), str, Toast.LENGTH_SHORT).show();
@@ -27,19 +30,19 @@ public class BridgeModule extends WXModule {
     public void printLogs(String str, JSCallback callback){
         Toast.makeText(mWXSDKInstance.getContext(), str, Toast.LENGTH_SHORT).show();
         Map<String, Object> map = new HashMap<>();
-        map.put("caicai", "my");
+        map.put("test", "my");
         callback.invokeAndKeepAlive(map);
         //callback.invoke(map);
     }
 
     @JSMethod
     public void log(String str){
-        Log.e("123", str);
+        Log.e(TAG, str);
     }
 
-    @JSMethod
+    @JSMethod(uiThread = true) //true为异步  false为同步
     public void events(String str){
-        Log.i("papappa","str   "+str);
-        EventBus.getDefault().post(new EventCenter(1,str));
+        Log.i(TAG,"events coming   "+str);
+      EventBus.getDefault().post(new EventCenter(1, str));
     }
 }

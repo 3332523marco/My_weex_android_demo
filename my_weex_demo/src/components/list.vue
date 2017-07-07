@@ -31,10 +31,11 @@ export default {
         created: function() {
             var url = this.$getConfig().bundleUrl;
             this.itemId = bus.methods.getItemId(url);
+            weex.requireModule('bridgeModule').log("this.lists " + this.itemId);
             bus.methods.getItem('listData', event => {
                 this.lists = JSON.parse(event.data);
             })
-            bus.methods.removeItem('listData');
+            // bus.methods.removeItem('listData');
         },
         methods: {
             onItemClick(index) {

@@ -15,7 +15,10 @@ $ npm install -g weex-toolkit
 ，则`sudo chmod -R 777 /Users/marco/.xtoolkit` 再进行install即可  
 不建议使用淘宝镜像安装，若使用淘宝镜像安装，可能会出现地址读取失败等问题，可以参考：`http://www.jianshu.com/p/a5e3b3709d62`
 ### 调试 we文件
+`建议：we其实是weex想创建一套属于自己的语法而诞生的，但实际上和vue几乎一致，只是略有不同，编译效率一致，建议用vue开发，这样可以保持vue的一致性`
+
 这个时候需要用到之前安装的 weex-toolkit 工具。
+
 以home.we为例
 直接执行命令：
 
@@ -108,7 +111,16 @@ Adapter 扩展 Weex 对一些基础功能实现了统一的接口，可实现这
 如果单页面的话 可以使用router、vuex，但是在调试中发现weex不支持vuex中的mapActions、mapGetters等方法映射
 如果需要全局方法或常量调用，可以参考本例中common/index.js   
 #### 传值
-传值：可以通过h5->native->h5等方式 也就是native作为数据传输中心，如果h5中的页面a需要发消息给上一页页面b，可以通过`weex.requireModule('bridgeModule').events(data);`先把值传给native  然后用native通过fireGlobalEventCallback回调信息给通过globalEvent注册的h5页面 
+
+* fireGlobalEventCallback
+
+可以通过h5->native->h5等方式 也就是native作为数据传输中心，如果h5中的页面a需要发消息给上一页页面b，可以通过`weex.requireModule('bridgeModule').events(data);`先把值传给native  然后用native通过eventbus找到对应的navigator页面，再通过fireGlobalEventCallback回调信息给通过globalEvent注册的h5页面 
+尝试过直接在module里直接fireGlobalEventCallback回调信息给通过globalEvent注册的h5页面，但是无论设置为异步还是同步都是不成功
+
+* fireEvent
+
+用于组件回调通知，如native封装的原生控件RecyclerView，当你需要设置滑动监听addScrollListener的时候，需要把监听状态返回给h5，这个时候可以用fireEvent进行事件回调，如<list>中的@scroll="scrollHandler"
+
 #### 存储
 使用weex提供的storage组件，注意因为浏览器限制了大小，需控制在5m以内，所以页面如果销毁的时候建议把对应的storage数据清除，以免造成存储空间用完。
 ### Weex和ReactNative对比

@@ -7,8 +7,8 @@ module.exports = {
         items: []
     },
     methods: {
-        tt() {
-            weex.requireModule('bridgeModule').printLog('tttttttt ');
+        tt(e) {
+           e('hahha');
         }
     }
 }

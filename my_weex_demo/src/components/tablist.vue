@@ -13,117 +13,117 @@ export default {
                 listData: [{
                     id: 1,
                     type: 1,
-                    src: 'http://www.easyicon.net/api/resizeApi.php?id=1204514&size=128',
+                    src: 'img/tab1.png',
                     name: '美的网关001'
                 }, {
                     id: 2,
                     type: 2,
-                    src: 'http://www.easyicon.net/api/resizeApi.php?id=1204514&size=128',
+                    src: 'img/tab2.png',
                     name: 'wifi冰箱0xAC'
                 }, {
                     id: 2,
                     type: 2,
-                    src: 'http://www.easyicon.net/api/resizeApi.php?id=1204514&size=128',
+                    src: 'img/tab2.png',
                     name: 'wifi空调0xAC'
                 }, {
                     id: 2,
                     type: 2,
-                    src: 'http://www.easyicon.net/api/resizeApi.php?id=1204514&size=128',
+                    src: 'img/tab2.png',
                     name: 'wifi风扇0xAC'
                 }, {
                     id: 2,
                     type: 2,
-                    src: 'http://www.easyicon.net/api/resizeApi.php?id=1204514&size=128',
+                    src: 'img/tab1.png',
                     name: 'wifi净化器0xAC'
                 }, {
                     id: 2,
                     type: 2,
-                    src: 'http://www.easyicon.net/api/resizeApi.php?id=1204514&size=128',
+                    src: 'img/tab2.png',
                     name: 'wifi热水器0xAC'
                 }, {
                     id: 2,
                     type: 2,
-                    src: 'http://www.easyicon.net/api/resizeApi.php?id=1204514&size=128',
+                    src: 'img/tab3.png',
                     name: 'wifi空调0xAC'
                 }, {
                     id: 2,
                     type: 2,
-                    src: 'http://www.easyicon.net/api/resizeApi.php?id=1204514&size=128',
+                    src: 'img/tab2.png',
                     name: 'wifi洗衣机0xAC'
                 }, {
                     id: 2,
                     type: 2,
-                    src: 'http://www.easyicon.net/api/resizeApi.php?id=1204514&size=128',
+                    src: 'img/tab2.png',
                     name: 'wifi电视机0xAC'
                 }, {
                     id: 2,
                     type: 2,
-                    src: 'http://www.easyicon.net/api/resizeApi.php?id=1204514&size=128',
+                    src: 'img/tab3.png',
                     name: 'wifi空调0xAC'
                 }, {
                     id: 2,
                     type: 2,
-                    src: 'http://www.easyicon.net/api/resizeApi.php?id=1204514&size=128',
+                    src: 'img/tab1.png',
                     name: 'wifi洗碗机0xAC'
                 }, {
                     id: 2,
                     type: 2,
-                    src: 'http://www.easyicon.net/api/resizeApi.php?id=1204514&size=128',
+                    src: 'img/tab1.png',
                     name: 'wifi晾衣架0xAC'
                 }, {
                     id: 2,
                     type: 2,
-                    src: 'http://www.easyicon.net/api/resizeApi.php?id=1204514&size=128',
+                    src: 'img/tab2.png',
                     name: 'wifi消毒柜0xAC'
                 }, {
                     id: 2,
                     type: 2,
-                    src: 'http://www.easyicon.net/api/resizeApi.php?id=1204514&size=128',
+                    src: 'img/tab1.png',
                     name: 'wifi净化器0xAC'
                 }, {
                     id: 2,
                     type: 2,
-                    src: 'http://www.easyicon.net/api/resizeApi.php?id=1204514&size=128',
+                    src: 'img/tab3.png',
                     name: 'wifi豆浆机0xAC'
                 }, {
                     id: 2,
                     type: 2,
-                    src: 'http://www.easyicon.net/api/resizeApi.php?id=1204514&size=128',
+                    src: 'img/tab1.png',
                     name: 'wifi空调0xAC'
                 }, {
                     id: 2,
                     type: 2,
-                    src: 'http://www.easyicon.net/api/resizeApi.php?id=1204514&size=128',
+                    src: 'img/tab2.png',
                     name: 'wifi洗碗机0xAC'
                 }, {
                     id: 2,
                     type: 2,
-                    src: 'http://www.easyicon.net/api/resizeApi.php?id=1204514&size=128',
+                    src: 'img/tab3.png',
                     name: 'wifi烘培机0xAC'
                 }, {
                     id: 2,
                     type: 2,
-                    src: 'http://www.easyicon.net/api/resizeApi.php?id=1204514&size=128',
+                    src: 'img/tab1.png',
                     name: 'wifi果汁机0xAC'
                 }, {
                     id: 3,
                     type: 1,
-                    src: 'http://www.easyicon.net/api/resizeApi.php?id=1204512&size=128',
+                    src: 'img/tab3.png',
                     name: '门锁008'
                 }, {
                     id: 4,
                     type: 2,
-                    src: 'http://www.easyicon.net/api/resizeApi.php?id=1204513&size=128',
+                    src: 'img/tab1.png',
                     name: '净化器006'
                 }, {
                     id: 5,
                     type: 1,
-                    src: 'http://www.easyicon.net/api/resizeApi.php?id=1204510&size=128',
+                    src: 'img/tab2.png',
                     name: '场景面板'
                 }, {
                     id: 6,
                     type: 3,
-                    src: 'http://www.easyicon.net/api/resizeApi.php?id=1204514&size=128',
+                    src: 'img/tab3.png',
                     name: '美的网关003'
                 }],
                 tabItems: [{

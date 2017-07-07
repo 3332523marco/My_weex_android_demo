@@ -6,7 +6,7 @@
                     <div style="flex-direction:row;text-align:center;">
                         <div style="flex:1;justify-content:center;flex-direction:row;text-align:center;">
                             <div>
-                                <image style="width:100px;height:100px;text-align:center;margin-top:5" src="http://www.easyicon.net/api/resizeApi.php?id=1204593&size=128"></image>
+                                <image style="width:100px;height:100px;text-align:center;margin-top:5" src="img/tab2.png"></image>
                             </div>
                             <div style="margin-left:15;">
                                 <text class="infotip">15:20 一次</text>
