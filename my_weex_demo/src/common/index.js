@@ -41,7 +41,7 @@ exports.methods = {
     go(url) {
         navigator.push({
             url: url,
-            animated: "true"
+            animated: "false"
         }, event => {
             // modal.toast({
             //     message: 'callback: ' + event

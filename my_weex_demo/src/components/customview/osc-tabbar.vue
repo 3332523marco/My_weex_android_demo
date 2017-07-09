@@ -1,6 +1,6 @@
 <template>
-    <div class="wrapper">
-        <scroller :class="[tabType == 1?'tabbar_bottom': 'tabbar_top']" :style="{height:height }" ref="tabbar" append="tree" scroll-direction="horizontal">
+    <div class="wrapper" :style="{top:tab_top}">
+        <scroller :class="[tabType == 1?'tabbar_bottom': 'tabbar_top']" :style="[tabType == 1?{height:height}: {height:height,top:tab_top}]" ref="tabbar" append="tree" scroll-direction="horizontal">
             <tabitem v-for="(item, index) in tabItems" :key="index" :type="tabType" :height="height" :index="item.index" :icon="item.icon" :title="item.title" :titleColor="item.titleColor" @tabItemOnClick="tabItemOnClick">
             </tabItem>
         </scroller>
@@ -41,8 +41,8 @@
     position: fixed;
     top: 0;
     bottom: 0;
-    left: 20px;
-    margin-left: 20px;
+    left: 0;
+    margin-left: 0;
     right: 0;
 }
 
@@ -59,6 +59,9 @@
 <script>
 export default {
     props: {
+        tab_top:{
+            default: 0
+        },
         height: {
             default: 88
         },

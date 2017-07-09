@@ -26,7 +26,7 @@ export default {
                     icon: '',
                     image: 'file://assets/components/img/main_tab_list_unpress.png',
                     selectedImage: 'file://assets/components/img/main_tab_list_press.png',
-                    src: 'file://assets/components/home.js',
+                    src: 'file://assets/components/tab.js',
                     visibility: 'hidden'
                 }, {
                     index: 2,

@@ -1,15 +1,18 @@
 <template>
     <div class="wrapper">
+      <scroller class="scroller">
         <text class="button" @click="callNative">callNative2</text>
         <homechild/>
         <!--  <SwitchBar class="dropdown" :status-id="status">
         </SwitchBar> -->
         <richtext tel="1391486934">点击跳转到拨打电话</richtext>
-        <Child ref="child" />
+        <Child/>
+        </scroller>
     </div>
 </template>
 <script>
-import Child from './homechild.vue'
+// import Child from './homechild.vue'
+import Child from './shop_tab_good_info.vue'
 
 export default {
     data() {

@@ -210,6 +210,8 @@
 }
 </style>
 <script>
+import bus from '../common'
+
 var modal = weex.requireModule('modal')
 module.exports = {
     props: {
@@ -520,10 +522,11 @@ module.exports = {
             this.fus(e,this.$refs.list);
         },
         oncellclick: function(id) {
-            modal.toast({
-                'message': 'row ' + id + ' clicked',
-                'duration': 2.0
-            });
+            bus.methods.go('file://assets/components/shop_info.js');
+            // modal.toast({
+            //     'message': 'row ' + id + ' clicked',
+            //     'duration': 2.0
+            // });
         }
     }
 

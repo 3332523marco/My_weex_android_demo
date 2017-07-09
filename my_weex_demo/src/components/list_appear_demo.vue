@@ -24,16 +24,6 @@
     height: 360px;
 }
 
-.title {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    color: #ff0000;
-    font-size: 48px;
-    font-weight: bold;
-    background-color: #eeeeee;
-}
-
 .slider {
     flex-direction: row;
     width: 800px;
